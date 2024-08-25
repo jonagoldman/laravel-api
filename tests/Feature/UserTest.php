@@ -10,7 +10,7 @@ class UserTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_login_endpoint(): void
+    public function test_login_success(): void
     {
         // preparation
         $user = User::factory()->create();
@@ -29,7 +29,25 @@ class UserTest extends TestCase
             ]);
     }
 
-    public function test_logout_endpoint(): void
+    public function test_login_error(): void
+    {
+        // preparation
+        $user = User::factory()->create();
+
+        // action
+        $response = $this->postJson('/api/v1/login', [
+            'email' => $user->email,
+            'password' => 'wrong',
+        ]);
+
+        // assertion
+        $response->assertStatus(422)
+            ->assertJson([
+                'message' => 'The provided credentials are incorrect.',
+            ]);
+    }
+
+    public function test_logout_success(): void
     {
         // preparation
         $user = User::factory()->create();
@@ -42,7 +60,16 @@ class UserTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_get_user_endpoint(): void
+    public function test_logout_error(): void
+    {
+        // action
+        $response = $this->postJson('/api/v1/logout');
+
+        // assertion
+        $response->assertStatus(401);
+    }
+
+    public function test_user_endpoint(): void
     {
         // preparation
         $user = User::factory()->create();
