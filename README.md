@@ -13,6 +13,17 @@ Este proyecto se integra con la API de Giphy funcionando como intermediario y ex
 > [!WARNING]
 > Laravel Sanctum proporciona autenticacion rapida para utilizar localmente en este projecto prueba. El token generado puede ser robado y no es seguro para utilizar en produccion.
 
+## Conceptos utilizados
+- **Comando** de consola para generar ambiente local de desarrollo.
+- **Eloquent** ORM para interactuar con la base de datos.
+- **Controller** para agrupar logica de manejo utilizando MVC.
+- **Middleware** para interceptar y persistir toda peticion y respuesta.
+- **Form Request** para encapsular logica de validacion.
+- **Versionamiento** de API para facilitar manutención y flexibilidad.
+- **Listener y Subscriber** para detectar y reaccionar a eventos del cliente HTTP.
+- **Servicio** con su propio Service Provider y para encapsular interaccion Giphy.
+- **Enum** para representar tipos de token.
+- **Tests** para prevenir y descubrir errores.
 
 ## Requisitos
 - Git
@@ -44,3 +55,19 @@ Este proyecto se integra con la API de Giphy funcionando como intermediario y ex
     ```bash
     ./vendor/bin/sail artisan setup:dev
     ```
+
+## Postman
+
+La Colección POSTMAN proporciona los servicios proporcionados y su descripcion con automatización de autenticacion.
+
+[Colleccion POSTMAN](https://www.postman.com/orvital/workspace/playground/collection/252628-faf51f3a-07e1-4742-b1e9-9c94c1827af8?action=share&creator=252628&active-environment=252628-f4f23439-0187-47bc-95cb-081499ce0337)
+
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/252628-faf51f3a-07e1-4742-b1e9-9c94c1827af8?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D252628-faf51f3a-07e1-4742-b1e9-9c94c1827af8%26entityType%3Dcollection%26workspaceId%3Da148ecd2-f327-4d92-ab3c-9d980895129c#?env%5BLocal%5D=W3sia2V5IjoiYXBpX3VybCIsInZhbHVlIjoibG9jYWxob3N0L2FwaS92MSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJkZWZhdWx0Iiwic2Vzc2lvblZhbHVlIjoibG9jYWxob3N0L2FwaS92MSIsInNlc3Npb25JbmRleCI6MH0seyJrZXkiOiJhdXRoLXRva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoic2VjcmV0Iiwic2Vzc2lvblZhbHVlIjoibnVsbCIsInNlc3Npb25JbmRleCI6MX1d)
+
+## Tests
+
+Ejecutar tests utilizando el comando
+
+```bash
+./vendor/bin/sail artisan test
+```
