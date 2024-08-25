@@ -28,6 +28,9 @@ class SetupDevEnvironment extends Command
     {
         $this->info('Setting up development environment');
 
+        // Generate application key
+        $this->call('key:generate');
+
         // Drop all tables, run migrations and seed
         $this->call('migrate:fresh', ['--seed' => true]);
 
