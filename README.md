@@ -5,13 +5,15 @@ Proyecto de prueba para Plex.
 ## Descripción
 Este proyecto se integra con la API de Giphy funcionando como intermediario y exponiendo al usuario una API personalizada.
 
+Se utilizan diferentes conceptos y patrones de codigo para demostrar conocimientos.
+
 ## Tecnologías
-- [Laravel v10](https://laravel.com/docs/10.x) es utilizado como framework base.
-- [Laravel Sail](https://laravel.com/docs/10.x/sail) es utilizado para ejecutar Docker localmente.
-- [Laravel Sanctum](https://laravel.com/docs/10.x/sanctum) se usa para autenticacion.
+- [Laravel v10](https://laravel.com/docs/10.x) framework base.
+- [Laravel Sail](https://laravel.com/docs/10.x/sail) simplifica la ejecucion local de Docker.
+- [Laravel Sanctum](https://laravel.com/docs/10.x/sanctum) para autenticacion con token.
 
 > [!WARNING]
-> Laravel Sanctum proporciona autenticacion rapida para utilizar localmente en este projecto prueba. El token generado puede ser robado y no es seguro para utilizar en produccion.
+> Laravel Sanctum brinda autenticacion token de demostracion, no es remplazo de OAuth.
 
 ## Conceptos utilizados
 - **Comando** de consola para generar ambiente local de desarrollo.
@@ -28,8 +30,6 @@ Este proyecto se integra con la API de Giphy funcionando como intermediario y ex
 ## Diagramas
 ![Caso de Uso](https://i.ibb.co/yRTp5Rb/Caso-de-Uso.png)
 ![Secuencia](https://i.ibb.co/9y7754Q/Sequence-diagram.png)
-
-> TODO
 
 ## Requisitos
 - Git
