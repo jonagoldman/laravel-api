@@ -1,6 +1,6 @@
 # Laravel API Test
 
-Proyecto de prueba para Plex.
+Proyecto de prueba para Prex.
 
 ## Descripción
 Este proyecto se integra con la API de Giphy funcionando como intermediario y exponiendo al usuario una API personalizada.
