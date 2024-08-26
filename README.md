@@ -1,6 +1,6 @@
 # Laravel API Test
 
-Proyecto de pruba para Plex.
+Proyecto de prueba para Plex.
 
 ## Descripción
 Este proyecto se integra con la API de Giphy funcionando como intermediario y exponiendo al usuario una API personalizada.
@@ -24,6 +24,12 @@ Este proyecto se integra con la API de Giphy funcionando como intermediario y ex
 - **Servicio** con su propio Service Provider y para encapsular interaccion Giphy.
 - **Enum** para representar tipos de token.
 - **Tests** para prevenir y descubrir errores.
+
+## Diagramas
+![Caso de Uso](https://i.ibb.co/yRTp5Rb/Caso-de-Uso.png)
+![Secuencia](https://i.ibb.co/9y7754Q/Sequence-diagram.png)
+
+> TODO
 
 ## Requisitos
 - Git
@@ -58,7 +64,7 @@ Este proyecto se integra con la API de Giphy funcionando como intermediario y ex
 
 ## Postman
 
-La Colección POSTMAN proporciona los servicios proporcionados y su descripcion con automatización de autenticacion.
+La Colección POSTMAN proporciona los servicios y su descripcion. El manejo de tokens de autenticacion es automatizado.
 
 [Colleccion POSTMAN](https://www.postman.com/orvital/workspace/playground/collection/252628-faf51f3a-07e1-4742-b1e9-9c94c1827af8?action=share&creator=252628&active-environment=252628-f4f23439-0187-47bc-95cb-081499ce0337)
 
