@@ -34,6 +34,7 @@ Se utilizan diferentes conceptos y patrones de codigo para demostrar conocimient
 ## Requisitos
 - Git
 - Docker
+- MySQL
 - PHP v8.2 en adelante
 
 ## Instalación
