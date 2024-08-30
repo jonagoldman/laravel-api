@@ -2,23 +2,13 @@
 
 namespace App\Services\Giphy;
 
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Client\PendingRequest;
 
 class GiphyService
 {
-    private PendingRequest $client;
-
-    function __construct(
-        protected string $url,
-        protected string $key,
-    ) {
-        $this->client = Http::baseUrl(Str::finish($url, '/'))
-            ->withQueryParameters([
-                'api_key' => $key,
-            ]);
-    }
+    public function __construct(
+        private PendingRequest $client
+    ) {}
 
     public function get(string $id)
     {

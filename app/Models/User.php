@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Log;
+use App\Models\Favorite;
 
 class User extends Authenticatable
 {
@@ -29,6 +30,11 @@ class User extends Authenticatable
         'password' => 'hashed',
         'email_verified_at' => 'datetime',
     ];
+
+    public function favorites(): HasMany
+    {
+        return $this->hasMany(Favorite::class);
+    }
 
     public function logs(): HasMany
     {

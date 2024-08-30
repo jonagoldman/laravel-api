@@ -2,8 +2,11 @@
 
 namespace App\Services\Giphy;
 
-use App\Services\Giphy\GiphyService;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
+use App\Services\Giphy\GiphyService;
 
 class GiphyServiceProvider extends ServiceProvider
 {
@@ -12,8 +15,13 @@ class GiphyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(GiphyService::class, function ($app) {
-            return new GiphyService(config('services.giphy.url'), config('services.giphy.key'));
+        $this->app->singleton(GiphyService::class, function (Application $app) {
+            $client = Http::baseUrl(Str::finish(config('services.giphy.url'), '/'))
+                ->withQueryParameters([
+                    'api_key' => config('services.giphy.key'),
+                ])->acceptJson();
+
+            return new GiphyService($client);
         });
     }
 

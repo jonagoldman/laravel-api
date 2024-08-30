@@ -6,19 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\User;
 
-class Log extends Model
+class Favorite extends Model
 {
     protected $fillable = [
-        'ip',
-        'url',
-        'method',
-        'request',
-        'response',
-    ];
-
-    protected $casts = [
-        'request' => 'json',
-        'response' => 'json',
+        'user_id',
+        'gif_id',
+        'alias',
     ];
 
     public function user(): BelongsTo
